@@ -29,7 +29,7 @@ class Login extends Component {
       }))
       Taro.request({
         method: 'POST',
-        url: 'http://localhost:3000/api/login',
+        url: 'http://193.112.56.84/api/login',
         data: {
           accessToken
         },
