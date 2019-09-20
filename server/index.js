@@ -1,5 +1,6 @@
 const express = require('express')
 const session = require('express-session')
+const path = require('path')
 const router = require('./router')
 const app = express()
 
@@ -12,6 +13,8 @@ app.use(session({
 app.use(express.json())
 
 app.use(express.urlencoded({ extended: false }))
+
+app.use('/public', express.static(path.join(__dirname, 'public')))
 
 app.use('/api', router)
 
