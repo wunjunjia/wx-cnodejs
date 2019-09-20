@@ -1,9 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text, Image, Input } from '@tarojs/components'
+import { View, Text, Image, Input, Button } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import './index.scss'
 import Alert from '../../components/Alert'
-import Loading from '../../components/Loading'
 import Avatar from '../../components/Avatar'
 import { login } from '../../actions/user'
 
@@ -15,14 +14,15 @@ class Login extends Component {
   constructor() {
     super(...arguments)
     this.state = {
+      accessToken: '',
       loading: false,
       error: false,
       message: ''
     }
   }
 
-  auth(e) {
-    const accessToken = e.target.value.trim()
+  auth() {
+    const { accessToken } = this.state
     if (accessToken) {
       this.setState((preState) => ({
         loading: true
@@ -62,20 +62,26 @@ class Login extends Component {
   }
 
   render() {
-    const { error, message, loading } = this.state
+    const { error, message, loading, accessToken } = this.state
     return (
       <View>
         <Avatar/>
         <View className='container'>
           <Input
             type='text'
+            value={accessToken}
             placeholder='请输入accessToken'
             placeholderStyle='color: #ccc'
             className='accessToken'
             onConfirm={this.auth}
+            onInput={(e) => {
+              this.setState(() => ({
+                accessToken: e.target.value.trim()
+              }))
+            }}
           />
+          <Button type='primary' className='btn' disabled={loading} onClick={this.auth}>登录</Button>
           { error ? <Alert message={message}/> : null }
-          { loading ? <Loading/> : null }
         </View>
       </View>
     )

@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
-import { Image, View } from '@tarojs/components'
+import { Image, View, Button } from '@tarojs/components'
 
 import './index.scss'
 import { connect } from '@tarojs/redux'
@@ -19,7 +19,6 @@ class Header extends Component {
   }
 
   render() {
-    // afbe2dfa-6b62-4833-9e7f-4ec9e286b768
     const { user, logout } = this.props
     return (
       <View className='header'>
