@@ -1,0 +1,29 @@
+.root {
+  padding: 10px;
+}
+
+.header {
+  height: 80px;
+  line-height: 80px;
+  font-size: 28px;
+  background-color: #f1f1f1;
+  padding: 0 20px;
+}
+
+.main {
+  .reply {
+    padding: 20px;
+    border-bottom: 1px solid #f1f1f1;
+    .secondary {
+      display: flex;
+    }
+    .avatar {
+      width: 60px;
+      height: 60px;
+      margin-right: 20px;
+    }
+    .desc {
+      font-size: 24px;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.alert{
+  margin: 10px 0;
+  box-sizing: border-box;
+  color: rgba(0,0,0,0.65);
+  font-size: 28px;
+  line-height: 1.5;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  background-color: #fff1f0;
+  border: 1px solid #ffa39e;
+  .message{
+    padding-left: 12px;
+  }
+}

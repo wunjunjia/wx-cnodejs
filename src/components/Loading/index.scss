@@ -1,0 +1,26 @@
+@import "~taro-ui/dist/style/components/icon.scss";
+
+.loading {
+  font-size: 80px;
+  color: #80bd01;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+
+  &::before {
+    animation-name: loading;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 1.2s;
+    display: inline-block;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

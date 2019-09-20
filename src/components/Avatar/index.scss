@@ -1,0 +1,16 @@
+.container {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+}
